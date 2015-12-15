@@ -1,6 +1,6 @@
 {
   "name": "servo-sdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Servo SDK",
   "keywords": [
     "servo",
@@ -12,6 +12,7 @@
   },
   "author": "nemtsov@gmail.com",
   "main": "lib/index",
+  "main-es6": "src/index",
   "license": "MIT",
   "scripts": {
     "prepublish": "babel src -d lib --optional runtime",
