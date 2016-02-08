@@ -42,7 +42,7 @@ describe('httpClient', () => {
         url: 'u/p',
         nice: true,
         path: '/p',
-        json: true,
+        json: true
       });
     });
 
@@ -50,7 +50,7 @@ describe('httpClient', () => {
       client.get('/p', {headers: {a: 3}});
       rp.get.firstCall.args[0].headers.should.eql({
         token: 't',
-        a: 3,
+        a: 3
       });
     });
 
@@ -69,7 +69,7 @@ describe('httpClient', () => {
 
       it('should rethrow for non 404 errors', () => {
         (function () {
-          notFound(new Error('e1'))
+          notFound(new Error('e1'));
         }).should.throw(/e1/);
       });
     });
@@ -83,7 +83,7 @@ describe('httpClient', () => {
 
       it('should rethrow for non http errors', () => {
         (function () {
-          wrapError(new Error('e1'))
+          wrapError(new Error('e1'));
         }).should.throw(/e1/);
       });
 
@@ -94,7 +94,7 @@ describe('httpClient', () => {
         err.options = {path: '/p'};
         err.response = {request: {method: 'POST'}};
         (function () {
-          wrapError(err)
+          wrapError(err);
         }).should.throw(/409 - POST \/p; Cause: inner-message/);
       });
     });

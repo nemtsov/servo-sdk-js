@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "env": {"node": true},
+  "env": {"node": true, "mocha": true},
   "rules": {
     "strict": 0,
     "curly": 0,

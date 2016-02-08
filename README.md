@@ -40,7 +40,7 @@ getStack: (appName, name)
 getStacks: (appName, options)
 
 // Stack/Config
-createStackConfig: (appName, name, key, value, isSecret=false)
+createStackConfig: (appName, name, key, value, {secret, md5} = {})
 deleteStackConfig: (appName, name, configId)
 getStackConfig: (appName, name)
 updateStackConfig: (appName, name, configId, value)

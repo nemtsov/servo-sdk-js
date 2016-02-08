@@ -22,7 +22,7 @@ export function createHttpClient({url, token}) {
       promise = promise.catch(wrapError);
 
       return promise;
-    }
+    };
   });
 
   return client;
