@@ -21,8 +21,8 @@ export function createClient(config) {
     getStacks: (appName, options) => c.get(`/apps/${appName}/stacks`, {qs: options}),
 
     // Stack/Config
-    createStackConfig: (appName, name, key, value, isSecret=false) =>
-      c.post(`/apps/${appName}/stacks/${name}/config`, {body: {key, value, secret: isSecret}}),
+    createStackConfig: (appName, name, key, value, {secret, md5} = {}) =>
+      c.post(`/apps/${appName}/stacks/${name}/config`, {body: {key, value, secret, md5}}),
     deleteStackConfig: (appName, name, configId) =>
       c.del(`/apps/${appName}/stacks/${name}/config/${configId}`),
     getStackConfig: (appName, name) => c.get(`/apps/${appName}/stacks/${name}/config`),
@@ -35,6 +35,6 @@ export function createClient(config) {
     getDeployment: (appName, stackName, deploymentId) =>
       c.get(`/apps/${appName}` + `/stacks/${stackName}/deploys/${deploymentId}`),
     getDeployments: (appName, stackName, options) =>
-      c.get(`/apps/${appName}/stacks/${stackName}/deploys`, {qs: options}),
-  }
+      c.get(`/apps/${appName}/stacks/${stackName}/deploys`, {qs: options})
+  };
 }
